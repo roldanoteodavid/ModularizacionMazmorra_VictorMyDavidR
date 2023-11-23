@@ -15,39 +15,39 @@ public class MMove extends JPanel implements MMoveInt {
     private java.util.List<Room> rooms;
     private MMoveListener listener;
 
-    private JButton up;
-    private JButton down;
-    private JButton left;
-    private JButton right;
+    private JButton north;
+    private JButton south;
+    private JButton weast;
+    private JButton east;
 
     private JLabel actualRoomDescription;
 
-    public void MMove(MMoveListener listener) {
-        super();
+    public MMove(MMoveListener listener) {
+        //super();
         this.listener = listener;
         initComponente();
     }
 
     private void initComponente() {
-        actualRoomDescription = new JLabel("Carga una mazmorra");
-        actualRoomDescription.setFont(new Font("Arial", Font.BOLD, 20));
+//        actualRoomDescription = new JLabel("COMENZAR");
+//        actualRoomDescription.setFont(new Font("Arial", Font.BOLD, 20));
         actualRoomDescription.setHorizontalAlignment(SwingConstants.CENTER);
         actualRoomDescription.setVerticalAlignment(SwingConstants.CENTER);
 
-        up = new JButton("Up");
-        up.setEnabled(false);
-        down = new JButton("Down");
-        down.setEnabled(false);
-        left = new JButton("Left");
-        left.setEnabled(false);
-        right = new JButton("Right");
-        right.setEnabled(false);
+        north = new JButton("North");
+        north.setEnabled(false);
+        south = new JButton("South");
+        south.setEnabled(false);
+        weast = new JButton("Weast");
+        weast.setEnabled(false);
+        east = new JButton("East");
+        east.setEnabled(false);
 
         setLayout(new BorderLayout());
-        add(up, BorderLayout.NORTH);
-        add(down, BorderLayout.SOUTH);
-        add(left, BorderLayout.WEST);
-        add(right, BorderLayout.EAST);
+        add(north, BorderLayout.NORTH);
+        add(south, BorderLayout.SOUTH);
+        add(weast, BorderLayout.WEST);
+        add(east, BorderLayout.EAST);
         add(actualRoomDescription, BorderLayout.CENTER);
     }
 
@@ -58,18 +58,18 @@ public class MMove extends JPanel implements MMoveInt {
 
     @Override
     public void loadRoom(Room room) {
-        up.setEnabled(false);
-        down.setEnabled(false);
-        left.setEnabled(false);
-        right.setEnabled(false);
+        north.setEnabled(false);
+        south.setEnabled(false);
+        weast.setEnabled(false);
+        east.setEnabled(false);
 
         actualRoomDescription.setText(room.getDescription());
 
         room.getDoorList().forEach(door -> {
             if (door.getName().equalsIgnoreCase("Norte")) {
-                up.setEnabled(true);
-                up.removeActionListener(up.getActionListeners().length > 0 ? up.getActionListeners()[0] : null);
-                up.addActionListener(e -> {
+                north.setEnabled(true);
+                north.removeActionListener(north.getActionListeners().length > 0 ? north.getActionListeners()[0] : null);
+                north.addActionListener(e -> {
                     Room nextRoom = rooms.stream()
                             .filter(r -> r.getId()
                                     .equalsIgnoreCase(room.getDoorList().stream().filter(d -> d.getName().equalsIgnoreCase("Norte"))
@@ -80,9 +80,9 @@ public class MMove extends JPanel implements MMoveInt {
                     loadRoom(nextRoom);
                 });
             } else if (door.getName().equalsIgnoreCase("Sur")) {
-                down.setEnabled(true);
-                down.removeActionListener(down.getActionListeners().length > 0 ? down.getActionListeners()[0] : null);
-                down.addActionListener(e -> {
+                south.setEnabled(true);
+                south.removeActionListener(south.getActionListeners().length > 0 ? south.getActionListeners()[0] : null);
+                south.addActionListener(e -> {
                     Room nextRoom = rooms.stream()
                             .filter(r -> r.getId()
                                     .equalsIgnoreCase(room.getDoorList().stream().filter(d -> d.getName().equalsIgnoreCase("Sur"))
@@ -93,9 +93,9 @@ public class MMove extends JPanel implements MMoveInt {
                     loadRoom(nextRoom);
                 });
             } else if (door.getName().equalsIgnoreCase("Oeste")) {
-                left.setEnabled(true);
-                left.removeActionListener(left.getActionListeners().length > 0 ? left.getActionListeners()[0] : null);
-                left.addActionListener(e -> {
+                weast.setEnabled(true);
+                weast.removeActionListener(weast.getActionListeners().length > 0 ? weast.getActionListeners()[0] : null);
+                weast.addActionListener(e -> {
                     Room nextRoom = rooms.stream()
                             .filter(r -> r.getId()
                                     .equalsIgnoreCase(room.getDoorList().stream().filter(d -> d.getName().equalsIgnoreCase("Oeste"))
@@ -106,9 +106,9 @@ public class MMove extends JPanel implements MMoveInt {
                     loadRoom(nextRoom);
                 });
             } else if (door.getName().equalsIgnoreCase("Este")) {
-                right.setEnabled(true);
-                right.removeActionListener(right.getActionListeners().length > 0 ? right.getActionListeners()[0] : null);
-                right.addActionListener(e -> {
+                east.setEnabled(true);
+                east.removeActionListener(east.getActionListeners().length > 0 ? east.getActionListeners()[0] : null);
+                east.addActionListener(e -> {
                     Room nextRoom = rooms.stream()
                             .filter(r -> r.getId()
                                     .equalsIgnoreCase(room.getDoorList().stream().filter(d -> d.getName().equalsIgnoreCase("Este"))
