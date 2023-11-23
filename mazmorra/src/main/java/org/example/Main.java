@@ -5,7 +5,6 @@ import org.example.model.Room;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -25,7 +24,7 @@ public class Main {
         JMenuBar menuBar = new JMenuBar();
         JMenu menu = new JMenu("Opciones");
         JMenuItem menuItemSalir = new JMenuItem("Salir");
-        JMenuItem menuItemLoad = new JMenuItem("Cargar mapa de mazmorras");
+        JMenuItem menuItemLoad = new JMenuItem("Load");
         menu.add(menuItemSalir);
         menu.add(menuItemLoad);
         menuBar.add(menu);
@@ -38,8 +37,7 @@ public class Main {
         MMoveListener listener = new MMoveListener() {
             @Override
             public void roomUpdated(Room room) {
-                mLog.clearLog();
-                mLog.addLogMessage("Has ido a: " + room.getDescription());
+                mLog.addLogMessage("Has ido a: " + room.getId() + "\n");
             }
         };
 
@@ -61,17 +59,15 @@ public class Main {
 
         menuItemSalir.addActionListener(e -> System.exit(0));
         menuItemLoad.addActionListener(e -> {
-            try {
-                mLoad.loadXMLFile();
-            } catch (Exception ex) {
-                throw new RuntimeException(ex);
-            }
+            mLog.clearLog();
+            mLoad.loadXMLFile();
             Dungeon dungeon = mLoad.getDungeon();
-            List<Room> rooms = new ArrayList<Room>(dungeon.getRooms());
+            List<Room> rooms = dungeon.getRooms();
             mMove.setRooms(rooms);
             mMove.loadRoom(rooms.get(0));
-            mLog.addLogMessage("Room " + rooms.get(0).getDescription());
+            mLog.addLogMessage("Comienza tu aventura, estás en la habitación " + rooms.get(0).getId() + "\n");
             mTree.createJTree(dungeon);
+
         });
     }
 }
