@@ -845,3 +845,15 @@ c
 3mazmorra/src/main/java/org/example/modelo/Door.java,1\f\1fa4b319cd121e945c09ee3ec1a06705140c4f62
 \
 ,mazmorra/src/main/java/org/example/Main.java,8\c\8c254f20559a87afb2591c9b59da5eaa458ac6bc
+b
+2mazmorra/src/main/java/org/example/model/Door.java,2\c\2c64a768f25937b7dc3bc6dbcf99e122b3b505b8
+b
+2mazmorra/src/main/java/org/example/model/Room.java,9\d\9d8985644dc0c4e83680f83e1e71ce17a5cab30b
+e
+5mazmorra/src/main/java/org/example/model/Dungeon.java,e\0\e0934d89614b8bd85b827b0773fffb598471a3a9
+_
+/mMove/src/main/java/org/example/model/Room.java,c\3\c3c50e6079d39ace796d58ed56fdf188f1fe7173
+_
+/mMove/src/main/java/org/example/model/Door.java,0\0\000d38ca1b8ca118b0f216452e91feb4b5c4af72
+b
+2mMove/src/main/java/org/example/model/Dungeon.java,8\1\81fbf61a6e349b13eede02aecd04b9f5b8d73335

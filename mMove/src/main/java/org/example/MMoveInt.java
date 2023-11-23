@@ -1,6 +1,6 @@
 package org.example;
 
-import org.example.modelo.Room;
+import org.example.model.Room;
 
 import java.util.List;
 

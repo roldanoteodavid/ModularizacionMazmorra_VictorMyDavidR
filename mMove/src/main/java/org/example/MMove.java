@@ -1,7 +1,7 @@
 package org.example;
 
 
-import org.example.modelo.Room;
+import org.example.model.Room;
 
 import javax.swing.*;
 import java.awt.*;

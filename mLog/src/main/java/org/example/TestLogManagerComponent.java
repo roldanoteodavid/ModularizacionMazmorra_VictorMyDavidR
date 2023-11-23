@@ -12,7 +12,7 @@ public class TestLogManagerComponent {
         frame.setSize(400, 300);
 
         // Crear LogManagerComponent (nuestro JTextArea con funcionalidades de LogManager)
-        MMLog logTextArea = new MMLog();
+        MLog logTextArea = new MLog();
 
         // Botón para generar números aleatorios
         JButton generateNumberButton = new JButton("Generar numero");
