@@ -47,7 +47,7 @@ public class Main {
         JSplitPane splitPaneVertical = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
         splitPaneVertical.setTopComponent(mMove);
         splitPaneVertical.setBottomComponent(mLog);
-        splitPaneVertical.setDividerLocation(100);
+        splitPaneVertical.setDividerLocation(300);
 
         JSplitPane splitPaneHorizontal = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT);
         splitPaneHorizontal.setLeftComponent(mTree);
@@ -66,7 +66,8 @@ public class Main {
             mMove.setRooms(rooms);
             mMove.loadRoom(rooms.get(0));
             mLog.addLogMessage("Comienza tu aventura, estás en la habitación " + rooms.get(0).getId() + "\n");
-            mTree.createJTree(dungeon);
+            splitPaneHorizontal.setLeftComponent(mTree.createJTree(dungeon));
+            mainPanel.updateUI();
 
         });
     }
