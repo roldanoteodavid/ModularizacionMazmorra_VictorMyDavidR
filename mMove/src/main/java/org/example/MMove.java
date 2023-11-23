@@ -6,7 +6,7 @@ import org.example.model.Room;
 import javax.swing.*;
 import java.awt.*;
 
-public class MMove extends JPanel implements MMoveInt {
+public class MMove extends JPanel implements MMoveInterface {
 
 
     private java.util.List<Room> rooms;
@@ -26,7 +26,7 @@ public class MMove extends JPanel implements MMoveInt {
     }
 
     private void initComponente() {
-//        actualRoomDescription = new JLabel("COMENZAR");
+        actualRoomDescription = new JLabel("COMENZAR");
 //        actualRoomDescription.setFont(new Font("Arial", Font.BOLD, 20));
         actualRoomDescription.setHorizontalAlignment(SwingConstants.CENTER);
         actualRoomDescription.setVerticalAlignment(SwingConstants.CENTER);
