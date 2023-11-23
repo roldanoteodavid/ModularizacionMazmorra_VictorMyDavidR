@@ -4,10 +4,7 @@ package org.example;
 import org.example.modelo.Room;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
-import java.time.LocalDate;
-import java.util.List;
 
 public class MMove extends JPanel implements MMoveInt {
 
