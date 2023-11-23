@@ -3,7 +3,6 @@
     <output-path>$PROJECT_DIR$/out/artifacts/mMove_jar</output-path>
     <root id="archive" name="mMove.jar">
       <element id="module-output" name="mMove" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>

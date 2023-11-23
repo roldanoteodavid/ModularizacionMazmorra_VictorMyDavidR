@@ -1,7 +1,7 @@
-package main;
+package org.example;
 
-import componente.*;
-import modelo.Room;
+import org.example.model.Dungeon;
+import org.example.model.Room;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,10 +15,10 @@ public class Main {
 
         JPanel mainPanel = new JPanel(new BorderLayout());
 
-        JFrame frame = new JFrame();
+        JFrame frame = new JFrame("Mazmorra");
         frame.add(mainPanel);
         frame.setVisible(true);
-        frame.setSize(800, 600);
+        frame.setSize(1280, 720);
         frame.setTitle("Mazmorras");
         frame.setResizable(false);
 
@@ -31,27 +31,28 @@ public class Main {
         menuBar.add(menu);
         frame.setJMenuBar(menuBar);
 
-        MLoad xmlLoader = new MLoad();
-        MLog jMazmorraLog = new MLog();
-        MTree jMazmorraTree = new MTree();
+        MLoad mLoad = new MLoad();
+        MLog mLog = new MLog();
+        MTree mTree = new MTree();
 
-        JMazmorraNavigationListener listener = new JMazmorraNavigationListener() {
+        MMoveListener listener = new MMoveListener() {
             @Override
             public void roomUpdated(Room room) {
-                jMazmorraLog.addLogMessage("Has ido a: " + room.getDescription());
+                mLog.clearLog();
+                mLog.addLogMessage("Has ido a: " + room.getDescription());
             }
         };
 
-        JMazmorraNavigation jMazmorraNavigation = new JMazmorraNavigation(listener);
+        MMove mMove = new MMove(listener);
 
 
         JSplitPane splitPaneVertical = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
-        splitPaneVertical.setTopComponent(jMazmorraNavigation);
-        splitPaneVertical.setBottomComponent(jMazmorraLog);
+        splitPaneVertical.setTopComponent(mMove);
+        splitPaneVertical.setBottomComponent(mLog);
         splitPaneVertical.setDividerLocation(100);
 
         JSplitPane splitPaneHorizontal = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT);
-        splitPaneHorizontal.setLeftComponent(jMazmorraTree);
+        splitPaneHorizontal.setLeftComponent(mTree);
         splitPaneHorizontal.setRightComponent(splitPaneVertical);
         splitPaneHorizontal.setDividerLocation(200);
 
@@ -61,15 +62,16 @@ public class Main {
         menuItemSalir.addActionListener(e -> System.exit(0));
         menuItemLoad.addActionListener(e -> {
             try {
-                xmlLoader.loadXMLFile();
+                mLoad.loadXMLFile();
             } catch (Exception ex) {
                 throw new RuntimeException(ex);
             }
-            List<Room> rooms = new ArrayList<Room>(xmlLoader.getDungeon().getRooms());
-            jMazmorraNavigation.setRooms(rooms);
-            jMazmorraNavigation.loadRoom(rooms.get(0));
-            jMazmorraLog.addLogMessage("Room " + rooms.get(0).getDescription());
-            jMazmorraTree.createTree(rooms);
+            Dungeon dungeon = mLoad.getDungeon();
+            List<Room> rooms = new ArrayList<Room>(dungeon.getRooms());
+            mMove.setRooms(rooms);
+            mMove.loadRoom(rooms.get(0));
+            mLog.addLogMessage("Room " + rooms.get(0).getDescription());
+            mTree.createJTree(dungeon);
         });
     }
 }
