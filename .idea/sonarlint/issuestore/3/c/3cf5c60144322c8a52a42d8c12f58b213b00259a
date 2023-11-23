@@ -1,7 +1,7 @@
 
 v
-java:S1450"TRemove the "rooms" field and declare it as a local variable in the relevant methods.(Ú¿ÇÄÿÿÿÿÿ8Òéœ¹¿1
-X	java:S125"<This block of commented-out lines of code should be removed.(‰†ã»8¬ìíØ¿1
-]	java:S125 "<This block of commented-out lines of code should be removed.(à·Î“øÿÿÿÿ8•‰ïØ¿1
+java:S1450"TRemove the "rooms" field and declare it as a local variable in the relevant methods.(Ú¿ÇÄÿÿÿÿÿ8Ÿö÷Ø¿1
+X	java:S125"<This block of commented-out lines of code should be removed.(‰†ã»8²ö÷Ø¿1
+]	java:S125 "<This block of commented-out lines of code should be removed.(à·Î“øÿÿÿÿ8Ãö÷Ø¿1
 t
-java:S3776<"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(ø—Áàÿÿÿÿÿ8Öéœ¹¿1
+java:S3776<"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(ø—Áàÿÿÿÿÿ8Öö÷Ø¿1
