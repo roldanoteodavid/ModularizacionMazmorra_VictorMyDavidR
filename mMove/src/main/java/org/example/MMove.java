@@ -62,14 +62,14 @@ public class MMove extends JPanel implements MMoveInt {
 
         actualRoomDescription.setText(room.getDescription());
 
-        room.getDoorList().forEach(door -> {
+        room.getDoors().forEach(door -> {
             if (door.getName().equalsIgnoreCase("Norte")) {
                 north.setEnabled(true);
                 north.removeActionListener(north.getActionListeners().length > 0 ? north.getActionListeners()[0] : null);
                 north.addActionListener(e -> {
                     Room nextRoom = rooms.stream()
                             .filter(r -> r.getId()
-                                    .equalsIgnoreCase(room.getDoorList().stream().filter(d -> d.getName().equalsIgnoreCase("Norte"))
+                                    .equalsIgnoreCase(room.getDoors().stream().filter(d -> d.getName().equalsIgnoreCase("Norte"))
                                             .findFirst().get()
                                             .getDest())
                             ).findFirst().get();
@@ -82,7 +82,7 @@ public class MMove extends JPanel implements MMoveInt {
                 south.addActionListener(e -> {
                     Room nextRoom = rooms.stream()
                             .filter(r -> r.getId()
-                                    .equalsIgnoreCase(room.getDoorList().stream().filter(d -> d.getName().equalsIgnoreCase("Sur"))
+                                    .equalsIgnoreCase(room.getDoors().stream().filter(d -> d.getName().equalsIgnoreCase("Sur"))
                                             .findFirst().get()
                                             .getDest())
                             ).findFirst().get();
@@ -95,7 +95,7 @@ public class MMove extends JPanel implements MMoveInt {
                 weast.addActionListener(e -> {
                     Room nextRoom = rooms.stream()
                             .filter(r -> r.getId()
-                                    .equalsIgnoreCase(room.getDoorList().stream().filter(d -> d.getName().equalsIgnoreCase("Oeste"))
+                                    .equalsIgnoreCase(room.getDoors().stream().filter(d -> d.getName().equalsIgnoreCase("Oeste"))
                                             .findFirst().get()
                                             .getDest())
                             ).findFirst().get();
@@ -108,7 +108,7 @@ public class MMove extends JPanel implements MMoveInt {
                 east.addActionListener(e -> {
                     Room nextRoom = rooms.stream()
                             .filter(r -> r.getId()
-                                    .equalsIgnoreCase(room.getDoorList().stream().filter(d -> d.getName().equalsIgnoreCase("Este"))
+                                    .equalsIgnoreCase(room.getDoors().stream().filter(d -> d.getName().equalsIgnoreCase("Este"))
                                             .findFirst().get()
                                             .getDest())
                             ).findFirst().get();

@@ -1,6 +1,6 @@
 
-I
-java:S1948"'Make "rooms" transient or serializable.(Ú¿ÇÄÿÿÿÿÿ8ş÷ôÙ¿1
+v
+java:S1450"TRemove the "rooms" field and declare it as a local variable in the relevant methods.(Ú¿ÇÄÿÿÿÿÿ8ıÇÍÚ¿1
 L
 java:S1948"*Make "listener" transient or serializable.(—œëòşÿÿÿÿ8ÿ÷ôÙ¿1
 X	java:S125"<This block of commented-out lines of code should be removed.(‰†ã»8¬ìíØ¿1
