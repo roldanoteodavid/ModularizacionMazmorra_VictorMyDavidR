@@ -55,3 +55,7 @@ G.idea/sonarlint/issuestore/8/a/8a1b075991cd77cd0a9d9bc884d53f338254c7e1,7\2\72
 -.idea/sonarlint/securityhotspotstore/index.pb,8\8\88a9255124c95bdc913197c120a8d560edc59c8e
 Å
 Q.idea/sonarlint/securityhotspotstore/8/e/8e7be3c209b7838d2db1017633eef66cd29505b7,f\2\f26819b65e681d3eabe1e173006315751952b2a9
+b
+2mMove/src/main/java/org/example/MMoveListener.java,a\8\a89ec8cb6f0bf2dea826054c1ec2932e7671cec8
+Q
+!mazmorra/src/META-INF/MANIFEST.MF,1\6\16bbf6097c892fa541e1d32a565313de5c97982a

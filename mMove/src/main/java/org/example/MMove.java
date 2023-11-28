@@ -27,7 +27,6 @@ public class MMove extends JPanel implements MMoveInterface {
 
     private void initComponente() {
         actualRoomDescription = new JLabel("COMENZAR");
-//        actualRoomDescription.setFont(new Font("Arial", Font.BOLD, 20));
         actualRoomDescription.setHorizontalAlignment(SwingConstants.CENTER);
         actualRoomDescription.setVerticalAlignment(SwingConstants.CENTER);
 
